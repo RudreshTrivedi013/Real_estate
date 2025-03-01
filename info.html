@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+        function loadPropertyDetails() {
+            const params = new URLSearchParams(window.location.search);
+            const propertyType = params.get("property");
+            const titleElement = document.getElementById("property-title");
+            const descElement = document.getElementById("property-desc");
+            const imgElement = document.getElementById("property-image");
+            const typeElement = document.getElementById("property-type");
+            const priceElement = document.getElementById("property-price");
+            const locationElement = document.getElementById("property-location");
+            const areaElement = document.getElementById("property-area");
+            const furnishingElement = document.getElementById("property-furnishing");
+            const parkingElement = document.getElementById("property-parking");
+
+            const properties = {
+                seaview: {
+                    title: "Property with Sea View",
+                    desc: "Experience breathtaking vistas daily with a sea-view property. Perfect for a serene retreat or vibrant seaside living.",
+                    img: "home2.png",
+                    type: "3 BHK Apartment",
+                    price: "₹1.2 Crore",
+                    location: "Beachfront, Goa",
+                    area: "1,800 sq. ft.",
+                    furnishing: "Semi-Furnished",
+                    parking: "2 Covered Parking Spaces"
+                },
+                luxury: {
+                    title: "Luxury Properties",
+                    desc: "Indulge in elegance with an exclusive luxury property. Find modern penthouses and expansive villas in prime locations.",
+                    img: "luxury.png",
+                    type: "4 BHK Villa",
+                    price: "₹5 Crore",
+                    location: "Bandra, Mumbai",
+                    area: "4,500 sq. ft.",
+                    furnishing: "Fully Furnished",
+                    parking: "3 Covered Parking Spaces"
+                },
+                ac: {
+                    title: "Properties with A.C.",
+                    desc: "Stay cool and comfortable in an air-conditioned home, perfect for Spain's warm climate.",
+                    img: "home4.png",
+                    type: "2 BHK Apartment",
+                    price: "₹80 Lakh",
+                    location: "Valencia, Spain",
+                    area: "1,200 sq. ft.",
+                    furnishing: "Unfurnished",
+                    parking: "1 Open Parking Space"
+                }
+            };
+
+            if (propertyType in properties) {
+                const property = properties[propertyType];
+                titleElement.textContent = property.title;
+                descElement.textContent = property.desc;
+                imgElement.src = property.img;
+                typeElement.textContent = property.type;
+                priceElement.textContent = property.price;
+                locationElement.textContent = property.location;
+                areaElement.textContent = property.area;
+                furnishingElement.textContent = property.furnishing;
+                parkingElement.textContent = property.parking;
+            } else {
+                titleElement.textContent = "Property Not Found";
+                descElement.textContent = "Please select a valid property.";
+                imgElement.style.display = "none";
+            }
+        }
+    </script>
+    <style>
+      
+        .map-container {
+            height: 100%; 
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .property-info {
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            height: 100%; 
+        }
+        .property-details ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .property-details li {
+            margin-bottom: 10px;
+        }
+        .amenities ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .amenities li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body onload="loadPropertyDetails()">
+    <div class="container mt-5">
+        <div class="row" style="height: 80vh;">
+            
+            <div class="col-md-6">
+                <div class="property-info">
+                    <img id="property-image" src="" class="img-fluid rounded mb-4" alt="Property Image">
+                    <h1 id="property-title" class="mb-3"></h1>
+                    <p id="property-desc" class="mb-4"></p>
+
+                    
+                    <div class="property-details mb-4">
+                        <h3 class="mb-3">Details</h3>
+                        <ul>
+                            <li><strong>Type:</strong> <span id="property-type"></span></li>
+                            <li><strong>Price:</strong> <span id="property-price"></span></li>
+                            <li><strong>Location:</strong> <span id="property-location"></span></li>
+                            <li><strong>Area:</strong> <span id="property-area"></span></li>
+                            <li><strong>Furnishing:</strong> <span id="property-furnishing"></span></li>
+                            <li><strong>Parking:</strong> <span id="property-parking"></span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Amenities -->
+                    <div class="amenities mb-4">
+                        <h3 class="mb-3">Amenities</h3>
+                        <ul class="row">
+                            <li class="col-md-6"><ion-icon name="wifi-outline"></ion-icon> High-Speed Internet</li>
+                            <li class="col-md-6"><ion-icon name="fitness-outline"></ion-icon> Gym</li>
+                            <li class="col-md-6"><ion-icon name="water-outline"></ion-icon> Swimming Pool</li>
+                            <li class="col-md-6"><ion-icon name="restaurant-outline"></ion-icon> Restaurant</li>
+                            <li class="col-md-6"><ion-icon name="car-sport-outline"></ion-icon> Valet Parking</li>
+                            <li class="col-md-6"><ion-icon name="leaf-outline"></ion-icon> Green Garden</li>
+                        </ul>
+                    </div>
+
+                    <!-- Call to Action -->
+                    <div class="text-center">
+                        <a href="demo.html" class="btn btn-primary me-3">Back to Listings</a>
+                        <a href="#" class="btn btn-success">Contact Agent</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Google Maps -->
+            <div class="col-md-6">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2176767606813!2d-73.98823492346994!3d40.748440471388325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1708016271540!5m2!1sen!2sus" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+
+a{
+    text-decoration: none;
+}
+:root{
+    --gradiant: linear-gradient(270deg,#0f4392 0%,#001D3D 100%);
+    --font-primary: 'Montserrat',sans-serif;
+
+}
+html{   
+    font-family: var(--font-primary);
+    /* font-size: ; */
+    scroll-behavior: smooth;
+}
+
+
+.navbar-nav .nav-link:hover {
+    color: #17f360 ; 
+}
+
+.navbar-collapse {
+    opacity: 1; /* Ensure it's visible */
+    transform: none; /* No need to move it initially */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.navbar-collapse.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.btn:hover{
+    background-color: wheat;
+}
+.custom-btn:hover {
+    background-color: white !important; /* Change background to white on hover */
+}
+
+/* 
+
+@media (max-width: 991px) { 
+    .navbar-collapse {
+        opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+
+    .navbar-collapse.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} */
+
+
+
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:focus {
+    color: rgb(201, 100, 46); 
+}
+.hero {
+    background-image: url(home.png); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50vh; 
+    display: flex;
+    align-items: center;
+    color: black; 
+    position: relative;
+}
+
+
+/* .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    z-index: 1;
+} */
+
+/* .hero-content {
+    position: relative;
+    z-index: 2;
+} */
+
+/* .hero {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+} */
+
+
+body h1,h2,h3{
+    font-family: Inter, Roboto, Helvetica Neue, Arial, sans-serif;
+}
+.fixed-carousel {
+    height: 400px; 
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Square Carousels */
+.square-carousel {
+    height: 300px; 
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.clickable:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* Lightbox Modal Image */
+/* .modal-content {
+    background: none;
+    border: none;
+    text-align: center;
+}
+
+.modal-content img {
+    max-height: 80vh;
+    border-radius: 10px;
+} */
+
+/* Responsive Adjustments */
+/* @media (max-width: 768px) {
+    .fixed-carousel {
+        height: 300px;
+    }
+    .square-carousel {
+        height: 250px;
+    }
+} */
+
+.custom-img {
+    /* border-radius: 10px; More rounded */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+    background-color: white; /* Background color for contrast */
+    padding: 10px; /* Space between image and background */
+    max-width: 90%; /* Ensures image isn't too big */
+}
+.clickable-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    color: #333;
+    height: 100%;
+}
+
+.clickable-box:hover {
+    transform: scale(1.05);
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.clickable-box img {
+    width: 120px; /* Fixed Width */
+    height: 120px; /* Fixed Height */
+    border-radius: 50%;
+    object-fit: cover; /* Ensures images don't stretch */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.clickable-box:hover img {
+    transform: scale(1.1);
+}
+
+.clickable-box h4 {
+    font-weight: bold;
+}
+
+.clickable-box p {
+    font-size: 14px;
+    color: #555;
+}
+.image-box img {
+    width: 100%; 
+    height: 200px;
+    object-fit: cover; 
+    border-radius: 10px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease-in-out; 
+}
+
+ .image-box:hover img {
+    transform: scale(1.05); 
+} 
+
+.image-box {
+    text-align: center;
+    padding: 10px;
+}
+.image-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px; 
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-box:hover {
+    transform: scale(1.05); 
+}
+
+.image-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.image-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+} 
+
+
+
+
+.profile-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+    margin-right: -10px;
+    border: 2px solid white;
+}
+
+.profile-circle.more {
+    background: #333;
+    color: white;
+    text-align: center;
+    line-height: 36px;
+    font-size: 14px;
+}
+
+.profile-circle:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.profile-circle.more {
+    background: #333;
+    color: white;
+    text-align: center;
+    line-height: 36px;
+    font-size: 14px;
+}
+
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Masonry Grid */
+.masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.card-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-img {
+    transform: scale(1.1); /* Slightly enlarge the image */
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+}
+
+.stars {
+    color: #ffd700;
+}
+
+.profile-small {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border: 2px solid white;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .profile-small {
+    transform: scale(1.1); /* Slightly enlarge the image */
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
